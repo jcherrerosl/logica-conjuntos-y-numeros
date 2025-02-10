@@ -183,4 +183,59 @@ Este código genera la siguiente salida (la tabla es el formato markdown):
 
 Aquí podemos ver cómo los operadores lógicos de C producen los mismos resultados que las tablas de verdad de la lógica proposicional.
 
+---
+
+## Implicación lógica (→)  
+
+En lógica proposicional, la **implicación** es una operación que relaciona dos proposiciones, **A** y **B**, y se denota como:  
+
+**A → B**  
+
+Su significado es: "**Si A es verdadera, entonces B también debe serlo**".  
+
+| A | B | A → B |
+|---|---|-------|
+| V | V | V     |
+| V | F | F     |
+| F | V | V     |
+| F | F | V     |
+
+La única situación en la que la **implicación es falsa** es cuando **A es verdadera pero B es falsa**.  
+
+🔹 **Ejemplo en lenguaje natural:**  
+- **Proposición:** "Si llueve, entonces la calle está mojada."  
+  - Si llueve y la calle está mojada (✅ verdadero).  
+  - Si llueve pero la calle **no** está mojada (❌ falso, contradicción).  
+  - Si **no llueve**, no podemos decir nada sobre la calle (✅ verdadero por defecto).  
+
+📝 **Nota importante:**  
+La implicación puede parecer contraintuitiva al principio, especialmente en el caso en que **A es falsa**. Sin embargo, en lógica formal, una **implicación con un antecedente falso** se considera **siempre verdadera**, porque no podemos comprobar si la conclusión es cierta o no.
+
+---
+
+## Bicondicional (↔)  
+
+El **bicondicional** es una relación más fuerte que la implicación y se denota como:  
+
+**A ↔ B**  
+
+Su significado es: "**A es verdadera si y solo si B también lo es**". Para que **A ↔ B sea verdadero**, **A y B deben tener el mismo valor de verdad** (ambos verdaderos o ambos falsos).  
+
+| A | B | A ↔ B |
+|---|---|-------|
+| V | V | V     |
+| V | F | F     |
+| F | V | F     |
+| F | F | V     |
+
+🔹 **Ejemplo en lenguaje natural:**  
+- **Proposición:** "Una figura es un cuadrado si y solo si tiene cuatro lados iguales y cuatro ángulos rectos."  
+  - Si una figura es un cuadrado, cumple ambas condiciones (✅ verdadero).  
+  - Si una figura tiene cuatro lados iguales y ángulos rectos, es un cuadrado (✅ verdadero).  
+  - Si una figura **no** es un cuadrado, **tampoco** cumple ambas condiciones (✅ verdadero).  
+  - Si una figura **no** cumple las condiciones, **tampoco** es un cuadrado (✅ verdadero).  
+
+El bicondicional es esencial en lógica, ya que expresa relaciones de **equivalencia lógica**.
+
+---
 
