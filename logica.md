@@ -116,4 +116,70 @@ Como podemos ver, los operadores lógicos en C funcionan de manera similar a su 
 Este tipo de operaciones son esenciales en programación para evaluar condiciones dentro de estructuras de control, como **sentencias `if` o bucles `while`**, que veremos más adelante.
 
 
+---
+
+## Tablas de verdad  
+
+Las **tablas de verdad** son una herramienta fundamental en lógica proposicional. Permiten visualizar cómo los operadores lógicos afectan el valor de verdad de una proposición en función de sus entradas.  
+
+A continuación, mostramos las tablas de verdad para los operadores **negación**, **conjunción** y **disyunción**.  
+
+### **Tabla de verdad de la negación (¬A)**  
+| A | ¬A |
+|---|----|
+| V | F  |
+| F | V  |
+
+### **Tabla de verdad de la conjunción (A ∧ B)**  
+| A | B | A ∧ B |
+|---|---|--------|
+| V | V | V      |
+| V | F | F      |
+| F | V | F      |
+| F | F | F      |
+
+### **Tabla de verdad de la disyunción (A ∨ B)**  
+| A | B | A ∨ B |
+|---|---|--------|
+| V | V | V      |
+| V | F | V      |
+| F | V | V      |
+| F | F | F      |
+
+---
+
+### **Representación de las tablas de verdad en C**  
+
+Ahora que hemos visto cómo funcionan las tablas de verdad en lógica matemática, podemos implementarlas en **C** usando `printf` para mostrar los valores de verdad de los operadores lógicos.  
+
+```c
+#include <stdio.h>
+
+int main() {
+    int A, B;
+
+    printf("A | B | A && B | A || B | !A \n");
+    printf("----------------------------\n");
+
+    for (A = 1; A >= 0; A--) {
+        for (B = 1; B >= 0; B--) {
+            printf("%d | %d |   %d   |   %d   |  %d \n",
+                   A, B, A && B, A || B, !A);
+        }
+    }
+    return 0;
+}
+```
+
+Este código genera la siguiente salida:   
+
+A | B | A && B | A || B | !A  
+----------------------------  
+1 | 1 |   1   |   1   |  0  
+1 | 0 |   0   |   1   |  0  
+0 | 1 |   0   |   1   |  1  
+0 | 0 |   0   |   0   |  1  
+
+Aquí podemos ver cómo los operadores lógicos de C producen los mismos resultados que las tablas de verdad de la lógica proposicional.
+
 
