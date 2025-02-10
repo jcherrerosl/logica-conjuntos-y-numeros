@@ -173,7 +173,7 @@ int main() {
 
 Este código genera la siguiente salida:   
 
-A | B | A && B | A | B | !A  
+A | B | A && B | A \|\| B | !A  
 ----------------------------  
 1 | 1 |   1   |   1   |  0  
 1 | 0 |   0   |   1   |  0  
