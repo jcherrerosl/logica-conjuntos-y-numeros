@@ -208,8 +208,10 @@ La única situación en la que la **implicación es falsa** es cuando **A es ver
   - Si llueve pero la calle **no** está mojada (❌ falso, contradicción).  
   - Si **no llueve**, no podemos decir nada sobre la calle (✅ verdadero por defecto).  
 
-📝 **Nota importante:**  
-La implicación puede parecer contraintuitiva al principio, especialmente en el caso en que **A es falsa**. Sin embargo, en lógica formal, una **implicación con un antecedente falso** se considera **siempre verdadera**, porque no podemos comprobar si la conclusión es cierta o no.
+>[!NOTE]  
+>La implicación puede parecer contraintuitiva al principio, especialmente en el caso en que **A es falsa**.  
+>Sin embargo, en lógica formal, una **implicación con un antecedente falso** se considera **siempre verdadera**,  
+>porque no podemos comprobar si la conclusión es cierta o no.
 
 ---
 
@@ -239,3 +241,94 @@ El bicondicional es esencial en lógica, ya que expresa relaciones de **equivale
 
 ---
 
+---
+
+## Implementación de la implicación y el bicondicional en C  
+
+Ahora que hemos entendido la teoría de la **implicación** y el **bicondicional**, veamos cómo podemos representarlos en **C**, dado que estos operadores no existen directamente en el lenguaje.  
+
+### **Cómo representar la implicación en C**  
+
+En lógica, la implicación **A → B** solo es **falsa** cuando **A es verdadera y B es falsa**. Podemos expresar esto en C con la equivalencia:  
+
+**A → B es lo mismo que ¬A ∨ B**  
+
+Por lo tanto, podemos implementarlo así:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int A, B;
+
+    printf("A | B | A → B \n");
+    printf("----------------\n");
+
+    for (A = 1; A >= 0; A--) {
+        for (B = 1; B >= 0; B--) {
+            printf("%d | %d |   %d \n", A, B, (!A || B));
+        }
+    }
+
+    return 0;
+}
+```
+
+### **Cómo representar el bicondicional en C**  
+
+El bicondicional **A ↔ B** es verdadero cuando **A y B tienen el mismo valor**, es decir, cuando **ambos son verdaderos o ambos son falsos**.  
+
+Matemáticamente, podemos expresar esto como:  
+
+**A ↔ B ≡ (A ∧ B) ∨ (¬A ∧ ¬B)**  
+
+Esto significa que el bicondicional se cumple si:  
+- A y B son ambos `1` (**verdadero**).  
+- A y B son ambos `0` (**falso**).  
+
+Podemos implementarlo en **C** de la siguiente manera:  
+
+```c
+#include <stdio.h>
+
+int main() {
+    int A, B;
+
+    printf("A | B | A ↔ B \n");
+    printf("----------------\n");
+
+    for (A = 1; A >= 0; A--) {
+        for (B = 1; B >= 0; B--) {
+            printf("%d | %d |   %d \n", A, B, ( (A && B) || (!A && !B) ));
+        }
+    }
+
+    return 0;
+}
+```
+
+### **Salida esperada**  
+
+Al ejecutar este programa, obtenemos la siguiente salida:
+
+A | B | A ↔ B  
+|--|---|----|  
+1 | 1 | 1  
+1 | 0 | 0  
+0 | 1 | 0  
+0 | 0 | 1  
+
+
+
+Esta tabla de valores coincide con la **tabla de verdad del bicondicional**, lo que confirma que la implementación en **C** es correcta.  
+
+En esta tabla podemos observar que:  
+- **Cuando A y B son iguales** (`1 1` o `0 0`), `A ↔ B` es **verdadero (1)**.  
+- **Cuando A y B son distintos** (`1 0` o `0 1`), `A ↔ B` es **falso (0)**.  
+
+Este comportamiento refleja la propiedad fundamental del bicondicional:  
+> **Dos proposiciones son equivalentes si tienen el mismo valor de verdad.**  
+
+Con esta implementación en **C**, podemos comprobar de manera práctica el funcionamiento del **bicondicional** en lógica proposicional.
+
+---
