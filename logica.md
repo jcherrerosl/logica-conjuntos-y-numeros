@@ -159,7 +159,7 @@ int main() {
     int A, B;
 
     printf("A | B | A && B | A || B | !A \n");
-    printf("----------------------------\n");
+    printf("|----|----|--------|--------|----|\n");
 
     for (A = 1; A >= 0; A--) {
         for (B = 1; B >= 0; B--) {
@@ -171,7 +171,7 @@ int main() {
 }
 ```
 
-Este código genera la siguiente salida:   
+Este código genera la siguiente salida (la tabla es el formato markdown):   
 
 | A  | B  | A && B | A \|\| B | !A |
 |----|----|--------|--------|----|
