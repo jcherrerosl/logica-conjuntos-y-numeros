@@ -173,21 +173,12 @@ int main() {
 
 Este código genera la siguiente salida:   
 
-A | B | `A && B` | `A || B`| !A  
-----------------------------  
+| A  | B  | A && B | A \|\| B | !A |
+|----|----|--------|--------|----|
 1 | 1 |   1   |   1   |  0  
 1 | 0 |   0   |   1   |  0  
 0 | 1 |   0   |   1   |  1  
 0 | 0 |   0   |   0   |  1  
-
-### **Tabla de verdad de los operadores lógicos**  
-
-| A | B | `A && B` | `A || B` | `!A` |
-|---|---|---------|---------|----|
-| V | V | V       | V       | F  |
-| V | F | F       | V       | F  |
-| F | V | F       | V       | V  |
-| F | F | F       | F       | V  |
 
 
 Aquí podemos ver cómo los operadores lógicos de C producen los mismos resultados que las tablas de verdad de la lógica proposicional.
