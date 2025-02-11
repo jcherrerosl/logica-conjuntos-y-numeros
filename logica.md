@@ -88,7 +88,8 @@ A continuación, presentamos un primer ejemplo en C que muestra cómo se aplican
 ```c
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int a = 1; // Representa "verdadero"
     int b = 0; // Representa "falso"
 
@@ -155,7 +156,8 @@ Ahora que hemos visto cómo funcionan las tablas de verdad en lógica matemátic
 ```c
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int A, B;
 
     printf("A | B | A && B | A || B | !A \n");
@@ -258,7 +260,8 @@ Por lo tanto, podemos implementarlo así:
 ```c
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int A, B;
 
     printf("A | B | A → B \n");
@@ -291,7 +294,8 @@ Podemos implementarlo en **C** de la siguiente manera:
 ```c
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int A, B;
 
     printf("A | B | A ↔ B \n");
